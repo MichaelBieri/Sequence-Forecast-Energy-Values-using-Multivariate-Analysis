@@ -1,5 +1,5 @@
 ## Hi there 👋
-I'm Michael, a broadly interested person in technology.
+I'm Michael from Switzerland, a broadly interested person in technology.
 My journey began with modular airplane construction, and through the Arduino world,
 I now landed in the exciting world of machine learning.
 Alongside my tech pursuits, I also enjoy music and sports.
