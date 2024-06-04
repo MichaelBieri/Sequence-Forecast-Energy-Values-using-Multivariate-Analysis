@@ -78,7 +78,25 @@ ARIMA and SARIMA are not usable.
 ## VII) Conclusion and Future Scope
 In case of the small data volume the GRU model is the best solution.
 
-## VIII) References
+## VIII) Data/References
+column names:
+swiss_electricity_price excl. VAT average all
+swiss grid usage price
+swiss energy supply costs
+swiss community fees
+swiss feed-in remuneration at cost KEV
+swiss hydropower production
+swiss photovoltaic production
+swiss wind power production
+swiss thermo power production
+swiss nuclear power production
+swiss energy consumption
+europe energy consumption
+swiss inflation
+swiss growth in nominal gross domestic product
+swiss growth in real gross domestic product
+europe inflation
+global economic policy uncertainty index
 [1] Basic Median electricity tariff for Switzerland
 https://www.strompreis.elcom.admin.ch/
 https://www.iea.org/
