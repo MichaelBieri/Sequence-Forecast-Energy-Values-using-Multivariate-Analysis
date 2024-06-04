@@ -79,13 +79,14 @@ https://opendata.swiss/de/dataset/energiedashboard-ch-stromproduktion-swissgrid/
 
 [2] Energy consumption:
 https://pubdb.bfe.admin.ch/de/suche?keywords=400
+https://ec.europa.eu/eurostat/databrowser/view/NRG_BAL_C__custom_6200326/bookmark/table?lang=en&bookmarkId=dea184ea-4883-453d-ba24-71e960a4f161
+https://www.earthdata.nasa.gov/
 
 [3] Inflation:
 https://www.data.finance.admin.ch/superset/dashboard/20/?native_filters_key=6QqyoSKrZy7gnpyEsq_V5Ftd96KRGaCYOz0Q2scksssJShFJDMriUvru48sfIoI1
 
 [4] Global Economic Policy Uncertainty Index:
-https://www.policyuncertainty.com/ Energy consumption: https://ec.europa.eu/eurostat/databrowser/view/NRG_BAL_C__custom_6200326/bookmark/table?lang=en&bookmarkId=dea184ea-4883-453d-ba24-71e960a4f161
-https://www.earthdata.nasa.gov/
+https://www.policyuncertainty.com/
 
 ## IX) Clone
 !git clone https://github.com/MichaelBieri/Sequence-Forecast-Energy-Values-Stock-Prices-using-Multivariate-Analysis.git
