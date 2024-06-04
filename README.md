@@ -72,3 +72,6 @@ In case of the small data volume the GRU model is the best solution.
 
 ## VIII) References
 [1] 
+
+## IX) Clone
+!git clone 
