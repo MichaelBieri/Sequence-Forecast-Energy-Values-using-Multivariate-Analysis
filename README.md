@@ -32,9 +32,27 @@ time products consumption categories energy providers municipalities The place w
 ## IV) Methodology
 Raw Data:
 
-We used the historical stock prices of Carriage Services, Inc. stocks obtained from Yahoo finance [8]. It contains 5670 records of daily stock prices of the stocks from 09/08/1996 to 22/02/2019. Each record contains information of high, low, opening and closing value of stocks as well as the volume of the stock sold on that day.
+column names:
+swiss_electricity_price excl. VAT average all
+swiss grid usage price
+swiss energy supply costs
+swiss community fees
+swiss feed-in remuneration at cost KEV
+swiss hydropower production
+swiss photovoltaic production
+swiss wind power production
+swiss thermo power production
+swiss nuclear power production
+swiss energy consumption
+europe energy consumption
+swiss inflation
+swiss growth in nominal gross domestic product
+swiss growth in real gross domestic product
+europe inflation
+global economic policy uncertainty index
 
 Data Pre-processing:
+A Augmented Dickey-Fuller (ADF) test showed that the time series is not stationary. ARIMA and SARIMAX not possible because of non seasonal data.
 
 First, we remove some redundant and noisy data, such as the records with volume 0 and the records that are identical to previous record. For unifying the data range, we applied Min-Max normalization and mapped the values to a range of 0 to 1.
 
@@ -78,25 +96,7 @@ ARIMA and SARIMA are not usable.
 ## VII) Conclusion and Future Scope
 In case of the small data volume the GRU model is the best solution.
 
-## VIII) Data/References
-column names:
-swiss_electricity_price excl. VAT average all
-swiss grid usage price
-swiss energy supply costs
-swiss community fees
-swiss feed-in remuneration at cost KEV
-swiss hydropower production
-swiss photovoltaic production
-swiss wind power production
-swiss thermo power production
-swiss nuclear power production
-swiss energy consumption
-europe energy consumption
-swiss inflation
-swiss growth in nominal gross domestic product
-swiss growth in real gross domestic product
-europe inflation
-global economic policy uncertainty index
+## VIII) References
 [1] Basic Median electricity tariff for Switzerland
 https://www.strompreis.elcom.admin.ch/
 https://www.iea.org/
