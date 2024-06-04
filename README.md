@@ -10,8 +10,6 @@ Recurrent Neural Networks (RNN) and its extensions like GRU and LSTM has shown g
 We have used different deep learning techniques, namely RNN, GRU and LSTM to model our problem. It is proven that deep learning algorithms have the ability to identify existing patterns in the data and exploiting them by using a soft learning process [4]. Unlike other statistical and machine learning algorithms, deep learning architectures are capable to find short term as well as long term dependencies in the data and give good predictions by finding these hidden relationships.
 
 ## III) Literature Review
-The following architectures are used in this paper:
-
 Recurrent Neural Networks (RNN): RNN are a class of ANNs where the output from previous step are fed as input to the current step along with the normal input. In feed forward ANNs, all the inputs and outputs are independent of each other, but in cases like when it is required to predict the time series, the previous values are required and hence there is a need to remember the previous values. It is found out that RNN suffers from vanishing gradient problem [5]. As we propagate the error through the network, it has to go through the temporal loop – the hidden layers connected to themselves in time by the means of weights wreck. Because this weight is applied many-many times on top of itself, that causes the gradient to decline rapidly. As a result, weights of the layers on the very far left are updated much slower than the weights of the layers on the far right. This creates a domino effect because the weights of the far-left layers define the inputs to the far-right layers. Therefore, the whole training of the network suffers, and that is called the problem of the vanishing gradient.
 
 Long Short Term Memory (LSTM): LSTM is an RNN network proposed by Sepp Hoch Reiter and Jürgen Schmidhuber in 1997 [6] to solve the problem of vanishing gradient in RNNs. LSTM uses the following gates to solve the problem:
@@ -20,6 +18,16 @@ Forget Gate: If set to true, the cell forgets the information coming from previo
 Input Gate: Chooses which value from input is going to update the memory state.
 Output Gate: Chooses what will be the cell output on the basis of input and memory of the cell.
 Gated Recurrent Unit (GRU): It is a variation of RNN introduced by Kyunghyun Cho et al [7] in 2014. It is like a LSTM unit without an output gate. It has fewer parameters than LSTM and have less complexity. GRU have shown better performance than LSTM on certain smaller datasets, but it is still weaker than LSTM overall.
+
+Units: energie in GWh and cent/kWh
+
+The model: Das Modell gehört zur Kategorie der verallgemeinerten additiven Modelle (GAMs) und liefert eine Vorhersage auf stündlicher und täglicher Basis mit einem unteren und oberen Konfidenzintervall von 2,5 bzw. 97,5.
+
+Electricity tariffs Electricity prices are composed of:
+
+Grid fee Price for transporting electricity from the power plant to the home. The revenue is used to finance the maintenance and expansion of the electricity grid, for example overhead lines, pylons and transformers. Energy price Price for the electrical energy supplied. The grid operator either generates this energy with its own power plants or buys it from upstream suppliers. The energy price is also influenced by the type of energy source. A high share of renewable energy (e.g. wind, solar, biomass energy) usually leads to higher energy prices. Municipality taxes Municipal and cantonal taxes and fees. These include, for example, concession fees or local political energy levies. Aidfee Federal tax for the promotion of renewable energies, and the protection of waters and fish. The amount of the aidfee is set annually by the Federal Council. The levy is the same everywhere. These components vary across:
+
+time products consumption categories energy providers municipalities The place where you live, the consumption category to which you belong, the energy provider you chose, and the product you subscribed for will affect your monthly bills.
 
 ## IV) Methodology
 Raw Data:
