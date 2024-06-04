@@ -1,6 +1,6 @@
 # Sequence Learning: Predicting Stock Prices using Multivariate Analysis
 ## I) Abstract
-This repository is to 
+This repository show two models to predict the energy price from swiss energy data.
 
 ## II) Introduction
 Linear regression assumptions (like ARIMA) or do not make full use of the data available and only consider one factor while forecasting (non-linear univariate models like ARCH, TAR [1] and deep learning models). But the stocks prediction is still open. The stock prices are highly dynamic and have non-linear relationships and is dependent on many factors at the same time [3]. We try to solve this problem of stock market forecasting using multivariate analysis.
