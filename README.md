@@ -74,4 +74,4 @@ In case of the small data volume the GRU model is the best solution.
 [1] 
 
 ## IX) Clone
-!git clone 
+!git clone https://github.com/MichaelBieri/Sequence-Forecast-Energy-Values-Stock-Prices-using-Multivariate-Analysis.git
