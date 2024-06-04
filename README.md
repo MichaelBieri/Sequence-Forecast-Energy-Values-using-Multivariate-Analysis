@@ -2,7 +2,7 @@
 ## I) Abstract
 This repository is to 
 
-## II) Introduction
+## II) Introduction
 Linear regression assumptions (like ARIMA) or do not make full use of the data available and only consider one factor while forecasting (non-linear univariate models like ARCH, TAR [1] and deep learning models). But the stocks prediction is still open. The stock prices are highly dynamic and have non-linear relationships and is dependent on many factors at the same time [3]. We try to solve this problem of stock market forecasting using multivariate analysis.
 
 Recurrent Neural Networks (RNN) and its extensions like GRU and LSTM has shown good performances in other sequential data like sound waves, time series variations and in natural language processing.
@@ -59,7 +59,7 @@ Batch Size: 64
 Total Trainable Parameters: 13359
 The training data is fed to this network and the model is trained for 150 epochs on the training data and validated by the validation data.
 
-## V) Tools and Technology Used
+## V) Tools and Technology Used
 We used Python syntax for this project. As a framework we used Keras, which is a high-level neural network API written in Python. But Keras can’t work by itself, it needs a backend for low-level operations. Thus, we installed a dedicated software library — Google’s TensorFlow.
 
 For scientific computation, we installed Scipy. As a development environment we used the Anaconda Distribution and Jupyter Notebook. We used Matplotlib for data visualization, Numpy for various array operations and Pandas for data analysis.
@@ -70,5 +70,5 @@ ARIMA and SARIMA are not usable.
 ## VII) Conclusion and Future Scope
 In case of the small data volume the GRU model is the best solution.
 
-## VIII) References
+## VIII) References
 [1] 
