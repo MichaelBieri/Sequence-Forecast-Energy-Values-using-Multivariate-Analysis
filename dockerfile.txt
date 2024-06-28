@@ -1,0 +1,25 @@
+# Latest ubuntu image
+FROM ubuntu:latest
+
+# Run system update
+RUN apt-get update && apt-get install -y python3 \ python3-pip
+RUN pip3 install jupyter
+RUN pip3 install numpy
+RUN pip3 install pandas
+RUN pip3 install seaborn
+RUN pip3 install matplotlib
+RUN pip3 install sklearn
+RUN pip3 install tensorflow
+RUN pip3 install keras
+
+# New user
+RUN useradd -ms /bin/bash jupyter
+
+# Change to new user
+USER jupyter
+
+# Set container to directory new user
+WORKDIR /home/jupyter
+
+# Start the jupyter notebook
+ENTRYPOINT ["jupyter", "notebook", "--ip=*"]
