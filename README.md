@@ -12,6 +12,7 @@
 <br />
 <div align="center">
   <a
+    ![Logo](./images/logo.png)
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
