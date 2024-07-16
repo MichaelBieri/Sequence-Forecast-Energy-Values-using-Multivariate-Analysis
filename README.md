@@ -64,11 +64,12 @@ The project tries two different RNN to forecast energy price. Linear regression 
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Following frameworks and tools are used:
 
 * [![TensorFlow](https://path-to-your-image/tensorflow.png)](https://www.tensorflow.org)
 * [![Keras](https://path-to-your-image/keras.png)](https://keras.io)
-* [![Jupyter Notebook](https://path-to-your-image/jupyter.png)](https://jupyter.org)
+* [![JQuery][https://jupyter.org/]][jupyter-url]
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
