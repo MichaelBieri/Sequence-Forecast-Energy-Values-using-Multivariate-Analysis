@@ -11,8 +11,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a
-    ![Logo](./images/logo.png)
+  <a href="#">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
