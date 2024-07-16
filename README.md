@@ -83,18 +83,15 @@ To get a local copy up and running follow these simple example steps.
 In addition to python. Install all libaries and jupyter.
 
 ### Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
 1. Clone the repo with HTTPS or download the ZIP-file
    ```sh
    https://github.com/MichaelBieri/Sequence-Forecast-Energy-Values-using-Multivariate-Analysis.git
    ```
 2. Install pip packages
    ```sh
-  pip install tensorflow keras numpy pandas matplotlib seaborn scikit-learn
-  pip install jupyter
-   ```
+    pip install tensorflow keras numpy pandas matplotlib seaborn scikit-learn
+    pip install jupyter
+    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
