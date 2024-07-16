@@ -67,6 +67,8 @@ The project tries two different RNN to forecast energy price. Linear regression 
 Following frameworks and tools are used:
 
 * [![Jupyter][Jupyter.org]][Jupyter-url]
+* [![TensorFlow][TensorFlow.org]][TensorFlow-url]
+* [![Keras][Keras.io]][Keras-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -196,3 +198,7 @@ Use this space to list resources you find helpful and would like to give credit 
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [Jupyter.org]: https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white
 [Jupyter-url]: https://jupyter.org/
+[TensorFlow.org]: https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white
+[TensorFlow-url]: https://www.tensorflow.org/
+[Keras.io]: https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white
+[Keras-url]: https://keras.io/
