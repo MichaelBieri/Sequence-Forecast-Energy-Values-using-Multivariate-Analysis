@@ -197,23 +197,24 @@ My resources:
 [1] Basic Median electricity tariff for Switzerland:
 
 - [Strompreis Elcom](https://www.strompreis.elcom.admin.ch/)
-- https://www.iea.org/
-- https://ec.europa.eu/eurostat/web/main/data/database#Data%20navigation%20tree
-- https://opendata.swiss/de/dataset/energiedashboard-ch-stromproduktion-swissgrid/resource/619e6fa0-7c2b-46dd-9633-7bd60fc5ec16
+- [IEA](https://www.iea.org/)
+- [Energy Database EC 1](https://ec.europa.eu/eurostat/web/main/data/database#Data%20navigation%20tree)
+- [Swiss Open Data - Energy Production swissgrid](https://opendata.swiss/de/dataset/energiedashboard-ch-stromproduktion-swissgrid/resource/619e6fa0-7c2b-46dd-9633-7bd60fc5ec16)
 
 [2] Energy consumption:
 
-- https://pubdb.bfe.admin.ch/de/suche?keywords=400
-- https://ec.europa.eu/eurostat/databrowser/view/NRG_BAL_C__custom_6200326/bookmark/table?lang=en&bookmarkId=dea184ea-4883-453d-ba24-71e960a4f161
-- https://www.earthdata.nasa.gov/
+- [Datenbank Bund](https://pubdb.bfe.admin.ch/de/suche?keywords=400)
+- [IEA](https://www.iea.org/)
+- [Energy Database EC 1](https://ec.europa.eu/eurostat/databrowser/view/NRG_BAL_C__custom_6200326/bookmark/table?lang=en&bookmarkId=dea184ea-4883-453d-ba24-71e960a4f161)
+- [Earthdata NASA](https://www.earthdata.nasa.gov/)
 
 [3] Inflation:
 
-- https://www.data.finance.admin.ch/superset/dashboard/20/?native_filters_key=6QqyoSKrZy7gnpyEsq_V5Ftd96KRGaCYOz0Q2scksssJShFJDMriUvru48sfIoI1
+- [Inflation](https://www.data.finance.admin.ch/superset/dashboard/20/?native_filters_key=6QqyoSKrZy7gnpyEsq_V5Ftd96KRGaCYOz0Q2scksssJShFJDMriUvru48sfIoI1)
 
 [4] Global Economic Policy Uncertainty Index:
 
-- https://www.policyuncertainty.com/
+- [Economic Index](https://www.policyuncertainty.com/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
