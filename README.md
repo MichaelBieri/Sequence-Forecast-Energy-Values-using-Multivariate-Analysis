@@ -12,7 +12,7 @@
 <br />
 <div align="center">
   <a href="#">
-    <img src="images/logo.png" alt="Logo" width="400" height="200">
+    <img src="images/logo.png" alt="Logo" width="600" height="200">
   </a>
 
   <h3 align="center">Two projects using Recurrent Neural Networks (RNN)</h3>
@@ -37,7 +37,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -77,84 +76,102 @@ Following frameworks and tools are used:
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+In addition to python. Install all libaries and jupyter.
 
 ### Installation
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo with HTTPS or download the ZIP-file
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   https://github.com/MichaelBieri/Sequence-Forecast-Energy-Values-using-Multivariate-Analysis.git
    ```
-3. Install NPM packages
+2. Install pip packages
    ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+  pip install tensorflow keras numpy pandas matplotlib seaborn scikit-learn
+  pip install jupyter
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- RLiterature Review -->
+## Literature Review
+Recurrent Neural Networks (RNN): RNN are a class of ANNs where the output from previous step are fed as input to the current step along with the normal input. In feed forward ANNs, all the inputs and outputs are independent of each other, but in cases like when it is required to predict the time series, the previous values are required and hence there is a need to remember the previous values. RNN suffers from vanishing gradient problem. As the error propagates through the network, it passes through the temporal loop—the hidden layers connected over time by weights. This repeated application causes the gradient to decline rapidly, leading to slower updates for the weights of layers on the far left compared to the far right. This issue, known as the vanishing gradient problem, affects the entire network's training. To address this, Sepp Hochreiter and Jürgen Schmidhuber proposed the Long Short Term Memory (LSTM) network in 1997.
+LSTM uses the following gates to solve the problem:
+Forget Gate: If set to true, the cell forgets the information coming from previous layers.
+Input Gate: Chooses which value from input is going to update the memory state.
+Output Gate: Chooses what will be the cell output on the basis of input and memory of the cell.
+Gated Recurrent Unit (GRU): It is a variation of RNN introduced by Kyunghyun Cho et al in 2014. It is like a LSTM unit without an output gate. It has fewer parameters than LSTM and have less complexity. GRU have shown better performance than LSTM on certain smaller datasets, but it is still weaker than LSTM overall.
 
+Units: energie in GWh and cent/kWh
 
-<!-- USAGE EXAMPLES -->
-## Usage
+Electricity tariffs Electricity prices are composed of:
+Grid fee Price for transporting electricity from the power plant to the home. The revenue is used to finance the maintenance and expansion of the electricity grid, for example overhead lines, pylons and transformers. Energy price for the electrical energy supplied. The grid operator either generates this energy with its own power plants or buys it from upstream suppliers. The energy price is also influenced by the type of energy source. A high share of renewable energy (e.g. wind, solar, biomass energy) usually leads to higher energy prices. Municipality taxes Municipal and cantonal taxes and fees. These include, for example, concession fees or local political energy levies. Aidfee Federal tax for the promotion of renewable energies, and the protection of waters and fish. The amount of the aidfee is set annually by the Federal Council. The levy is the same everywhere. These components vary across:
+Time products consumption categories energy providers municipalities The place where you live, the consumption category to which you belong, the energy provider you chose, and the product you subscribed for will affect your monthly bills.
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+<!-- Methodology -->
+## Methodology
+# Raw Data (column names):
+- swiss_electricity_price excl. VAT average all
+- swiss grid usage price
+- swiss energy supply costs
+- swiss community fees
+- swiss feed-in remuneration at cost KEV
+- swiss hydropower production
+- swiss photovoltaic production
+- swiss wind power production
+- swiss thermo power production
+- swiss nuclear power production
+- swiss energy consumption
+- europe energy consumption
+- swiss inflation
+- swiss growth in nominal gross domestic product
+- swiss growth in real gross domestic product europe inflation
+- global economic policy uncertainty index
 
-<!-- ROADMAP -->
-## Roadmap
+# Data Pre-processing
+1. A Augmented Dickey-Fuller (ADF) test showed that the time series is not stationary. ARIMA and SARIMAX not possible because of non seasonal data.
+2. First, we remove some redundant and noisy data, such as the records with volume 0 and the records that are identical to previous record. For unifying the data range, we applied Min-Max normalization and mapped the values to a range of 0 to 1.
+3. The data was split into train, validation and test data. The training data contains records from 1 Jan 1997 to 31 Dec 2006, validation data contains records from 1 Jan 2007 to 31 Dec 2008 and test data contains records from 1 Jan 2009 to 31 Dec 2010.
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+Testing and Error Calculation:
+Each model has been tested on the test set and their Mean Squared Error (MSE), Root Mean Squared Error (RMSE) and R2-score are calculated.
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+# Parameters
+Model 1 - Univariate-LSTM/Multivariate-LSTM
+Timesteps: 40
+Neurons in each Layer: 40 and 35
+Learning Rate: 0.001
+Batch Size: 64
+Total Trainable Parameters: 17408
+The training data is fed to this network and the model is trained for 250 epochs on the training data and validated by the validation data.
+
+Model 2 - Multivariate-GRU
+The model is trained on the series of records containing High price (Highest Correlation with target), Volume (Lowest Correlation with target) and Close price of the stock. Different parameters of this ANN are as follows:
+
+Timesteps: 40
+Neurons in each Layer: 40 and 35
+Learning Rate: 0.0001
+Batch Size: 64
+Total Trainable Parameters: 13359
+The training data is fed to this network and the model is trained for 150 epochs on the training data and validated by the validation data.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+<!-- RESULT -->
+## Result
+ARIMA and SARIMA are not usable. The GRU models deliver more realistic data.
+In case of the small data volume the GRU model is the best solution.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- LICENSE -->
 ## License
@@ -164,34 +181,28 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
+My resources:
+[1] Basic Median electricity tariff for Switzerland
+https://www.strompreis.elcom.admin.ch/
+https://www.iea.org/
+https://ec.europa.eu/eurostat/web/main/data/database#Data%20navigation%20tree
+https://opendata.swiss/de/dataset/energiedashboard-ch-stromproduktion-swissgrid/resource/619e6fa0-7c2b-46dd-9633-7bd60fc5ec16
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+[2] Energy consumption:
+https://pubdb.bfe.admin.ch/de/suche?keywords=400
+https://ec.europa.eu/eurostat/databrowser/view/NRG_BAL_C__custom_6200326/bookmark/table?lang=en&bookmarkId=dea184ea-4883-453d-ba24-71e960a4f161
+https://www.earthdata.nasa.gov/
 
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+[3] Inflation:
+https://www.data.finance.admin.ch/superset/dashboard/20/?native_filters_key=6QqyoSKrZy7gnpyEsq_V5Ftd96KRGaCYOz0Q2scksssJShFJDMriUvru48sfIoI1
+
+[4] Global Economic Policy Uncertainty Index:
+https://www.policyuncertainty.com/
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
