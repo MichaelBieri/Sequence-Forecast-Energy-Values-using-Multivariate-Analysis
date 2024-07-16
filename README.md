@@ -1,4 +1,4 @@
-# Sequence Learning: Predicting Stock Prices using Multivariate Analysis
+# Sequence Learning: Predicting Prices using Multivariate Analysis
 ## I) Abstract
 This repository show two models to predict the energy price from swiss energy data.
 
